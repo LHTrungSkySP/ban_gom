@@ -1,0 +1,18 @@
+# demo micro 
+- npx @angular/cli@17 new ban_gom --create-application=false
+- npx ng generate application shell
+- ...
+- npm i -D @angular-builders/custom-webpack@17
+- config port: `option: { port: xxx}`
+## turn on Module Federation
+- create [webpack.config.js] and [webpack.prod.config.js] for development and production environment
+- use [@angular-builders/custom-webpack] instead of [@angular-devkit/build-angular] at [angular.json].[architect.serve] && [architect.build]
+- ues [@angular-builders/custom-webpack:browser] instead of [@angular-builders/custom-webpack:application]
+- config [architect.serve] with `"publicHost": "http://localhost:xxx/"`
+- create [webpack.config.js]: ...
+- create [webpack.prod.config.js]: `module.exports = require('./webpack.config');`
+- [architect.build.builder.options]: ` "customWebpackConfig": { "path": "projects/shell/webpack.config.js" }`
+- [architect.build.configurations.production]: ` "customWebpackConfig": { "path": "projects/shell/webpack.prod.config.js" }`
+- config [architect.build.options]: `"main": "projects/shell/src/main.ts",`
+# NOTE
+- all config happens in  [architect]
