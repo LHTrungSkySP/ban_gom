@@ -17,5 +17,7 @@
 
 - [main.ts] : `import('./boostrap').catch(err => console.error(err));`
 - [boostrap.ts] : `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err));`
+- [types.d.ts] : `declare module 'mailbox/MailboxModule';declare module 'calendar/CalendarModule';`
+- [route] : `loadChildren: () => import('mailbox/MailboxModule').then(m => m.AppModule)`
 # NOTE
 - all config happens in  [architect]
