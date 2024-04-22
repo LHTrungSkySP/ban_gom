@@ -14,5 +14,8 @@
 - [architect.build.builder.options]: ` "customWebpackConfig": { "path": "projects/shell/webpack.config.js" }`
 - [architect.build.configurations.production]: ` "customWebpackConfig": { "path": "projects/shell/webpack.prod.config.js" }`
 - config [architect.build.options]: `"main": "projects/shell/src/main.ts",`
+
+- [main.ts] : `import('./boostrap').catch(err => console.error(err));`
+- [boostrap.ts] : `platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err));`
 # NOTE
 - all config happens in  [architect]

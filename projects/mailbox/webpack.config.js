@@ -22,7 +22,7 @@ module.exports = {
         type: 'module',
       },
       exposes: {
-        './MailboxModule': 'projects/mailbox/src/app/app.module.ts',
+        './MailboxModule': './projects/mailbox/src/app/app.module.ts',
       },
       /**
        * shared can be an object of type SharedConfig

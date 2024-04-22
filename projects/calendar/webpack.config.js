@@ -22,7 +22,7 @@ module.exports = {
       },
       filename: 'remoteEntry.js',
       exposes: {
-        './CalendarModule': './projects/calendar/src/app/calendar/calendar.module.ts',
+        './CalendarModule': './projects/calendar/src/app/app.module.ts',
       },
       /**
        * shared can be an object of type SharedConfig
